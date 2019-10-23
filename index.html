@@ -52,6 +52,12 @@
 </head>
 
 <body id="page-top">
+<script type"text/javascript">
+  mixpanel.track('Page Viewed', {
+    'Page title': document.title,
+    'url: window.location.pathname',
+  });
+</script>
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
