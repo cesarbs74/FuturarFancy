@@ -15,6 +15,20 @@
   <!-- Font Awesome Icons -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
+     <title>OuiBounce Testing Page</title>
+
+    <!-- Example page base styling -->
+    <!-- Don't worry abou this     -->
+    <style>
+      body {
+        background-color: #F0F1F2;
+        color: #2E4052;
+        min-height: 500px;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        font-family: sans-serif;
+      }
+    </style>
   <!-- Add the OuiBounce CSS & Font -->
      <link rel="stylesheet" href="css/ouibounce.css">
      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
@@ -24,6 +38,7 @@
 
         <!-- Add OuiBounce JS -->
     <script src="js/ouibounce.js"></script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150793361-1"></script>
 <script>
@@ -39,7 +54,7 @@
 for(h=0;h<l.length;h++)c(e,l[h]);var f="set set_once union unset remove delete".split(" ");e.get_group=function(){function a(c){b[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));e.push([d,call2])}}for(var b={},d=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<f.length;c++)a(f[c]);return b};a._i.push([b,d,g])};a.__SV=1.2;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
 MIXPANEL_CUSTOM_LIB_URL:"file:"===c.location.protocol&&"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d)}})(document,window.mixpanel||[]);
 mixpanel.init("728c818ffb4ffa5d25b51063c2b33b45");</script><!-- end Mixpanel -->
-    
+
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
@@ -204,15 +219,59 @@ mixpanel.init("728c818ffb4ffa5d25b51063c2b33b45");</script><!-- end Mixpanel -->
       <h2 class="mb-4">Vamos Começar?</h2>
       <a class="btn btn-light btn-xl" onclick="botao_FDNA()" href="https://dnabehavior.biz/Account/RegisterByGroup/Futurarplan/22">Faça o Teste!</a>
       <script type="text/javascript">
-      function botao_FDNA
+      function botao_FDNA(){
       mixpanel.track('Clique Botao', {
-        'Tipo':Fazer o Teste',
-        'url':window.location.pathname
+        'Tipo':'Fazer o Teste',
+        'url':window.location.pathname,
         });
       }
 </script>
       </div>
-        </section> 
+        </section>
+        <div id="ouibounce-popup">
+          <div class="underlay"></div>
+          <div class="popup">
+            <div class="popup-title">
+              <h3>Antes de ir embora...</h3>
+            </div>
+
+            <div class="popup-body">
+              <p>Deixe o seu email. Iremos te enviar dicas de como você pode seguir melhor no seu caminho financeiro.</p>
+              <p> <a href="https://en.wikipedia.org/wiki/Doge" target="blank"></a></p>
+
+              <form>
+                <input type="text" placeholder="voce@email.com">
+                <input type="submit" value="Assine &raquo;">
+                
+              </form>
+            </div>
+
+            <div class="popup-footer">
+              <p>Não quero</p>
+            </div>
+          </div>
+        </div>
+
+<script>
+      // if you want to use the 'fire' or 'disable' fn,
+      // you need to save OuiBounce to an object
+      var _ouibounce = ouibounce(document.getElementById('ouibounce-popup'), {
+        aggressive: true,
+        timer: 0,
+        callback: function() { console.log('ouibounce fired!'); }
+      });
+      $('body').on('click', function() {
+        $('#ouibounce-popup').hide();
+      });
+      $('#ouibounce-popup .popup-footer').on('click', function() {
+        $('#ouibounce-popup').hide();
+      });
+      $('#ouibounce-popup .popup').on('click', function(e) {
+        e.stopPropagation();
+      });
+    </script>
+
+
 
 </body>
 
