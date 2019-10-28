@@ -31,6 +31,7 @@
     </style>
   <!-- Add the OuiBounce CSS & Font -->
      <link rel="stylesheet" href="css/ouibounce.css">
+     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
      <!-- Load jQuery -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -224,6 +225,8 @@ mixpanel.init("728c818ffb4ffa5d25b51063c2b33b45");</script><!-- end Mixpanel -->
         'url':window.location.pathname,
         });
       }
+          $(document).ready(function() {
+
 </script>
       </div>
         </section>
@@ -286,6 +289,7 @@ mixpanel.init("728c818ffb4ffa5d25b51063c2b33b45");</script><!-- end Mixpanel -->
       $('#ouibounce-popup .popup-footer').on('click', function() {
         $('#ouibounce-popup').hide();
       });
+     });
       $('#ouibounce-popup .popup').on('click', function(e) {
         e.stopPropagation();
       });
